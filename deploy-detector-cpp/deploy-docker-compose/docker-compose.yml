@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build: ../
+    image: raushan0291/cpp-detector-flask
+    container_name: flask_app_det
+    ports:
+      - "5000:5000"
+      - "12345:12345"
+    devices:
+      - "/dev/video0:/dev/video0"
+    privileged: true
+    # volumes:
+    #   - /dev/video0:/dev/video0
+    environment:
+      - PYTHONUNBUFFERED=1
