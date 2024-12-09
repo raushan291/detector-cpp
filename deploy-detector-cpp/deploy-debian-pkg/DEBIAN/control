@@ -1,0 +1,11 @@
+Package: myapp
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Depends: python3, python3-flask, python3-gevent, python3-opencv, python3-numpy
+Maintainer: Your Name <your.email@example.com>
+Description: A Flask-based application for multi-camera inference using OpenCV.
+ This package provides a precompiled C++ executable for multithreaded inference,
+ shared libraries for OpenCV, and a Flask interface to manage streams.
+

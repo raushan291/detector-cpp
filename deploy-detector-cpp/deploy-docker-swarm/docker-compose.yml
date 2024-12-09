@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    image: raushan0291/cpp-detector-flask
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+      - "12345:12345"
+    devices:
+      - "/dev/video0:/dev/video0"
+    privileged: true
+    volumes:
+      - /home/raushan/Documents/Projects/cpp/classifier-cpp/classifier-cpp/11-00-12.ts:/app/11-00-12.ts
+      - /dev/video0:/dev/video0
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DISPLAY=${DISPLAY}
+      - XDG_RUNTIME_DIR=/tmp/xdg-runtime-dir
+    security_opt:
+      - label=disable
+    deploy:
+      replicas: 1
+      restart_policy:
+        max_attempts: 3
+        condition: on-failure
+      update_config:
+        parallelism: 3
+        delay: 10s

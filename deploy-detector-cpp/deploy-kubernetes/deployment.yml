@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpp-detector-flask-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cpp-detector-flask-app
+  template:
+    metadata:
+      labels:
+        app: cpp-detector-flask-app
+    spec:
+      containers:
+      - name: cpp-detector-flask-app
+        image: raushan0291/cpp-detector-flask:latest
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - name: video-path
+          mountPath: /app/11-00-12.ts
+        - name: camera-device
+          mountPath: /app/video0
+      volumes:
+      - name: video-path
+        hostPath:
+          path: /mnt/home/raushan/Documents/Projects/cpp/classifier-cpp/classifier-cpp/11-00-12.ts # minikube mount path (Not host path), if using minikube
+          type: File
+      - name: camera-device
+        hostPath:
+          path: /mnt/dev/video0
+          type: CharDevice
