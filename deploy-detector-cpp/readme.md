@@ -3,33 +3,33 @@
 1. Set Up the Directory Structure
     Create a directory structure for your Debian package. Use the following layout:
 
-    deploy-debian-pkg/
-    ├── DEBIAN/
-    │   └── control
-    ├── usr/
-    │   ├── local/
-    │   │   ├── bin/
-    │   │   │   └── start-myapp
-    │   │   ├── lib/
-    │   │   │   └── (all shared libraries here)
-    │   │   └── exe/
-    │   │       └── Infer_OpenCV_detector_multithreading_multiple_cameras.exe
-    │   └── share/
-    │       ├── myapp/
-    │       │   ├── app.py
-    │       │   ├── models/
-    │       │   │   └── yolov11n-face.onnx
-    │       │   ├── templates/
-    │       │   │   └── index.html
-    |       |
-    |       |── applications/
-    │       |    └── myapp.desktop
-    |       |
-    |       |── icons/
-    │           └── hicolor/
-    │               └── 48x48/
-    │                   └── apps/
-    │                       └── myapp-icon.png
+    deploy-debian-pkg/  
+    ├── DEBIAN/  
+    │   └── control  
+    ├── usr/  
+    │   ├── local/  
+    │   │   ├── bin/  
+    │   │   │   └── start-myapp  
+    │   │   ├── lib/  
+    │   │   │   └── (all shared libraries here)  
+    │   │   └── exe/  
+    │   │       └── Infer_OpenCV_detector_multithreading_multiple_cameras.exe  
+    │   └── share/  
+    │       ├── myapp/  
+    │       │   ├── app.py  
+    │       │   ├── models/  
+    │       │   │   └── yolov11n-face.onnx  
+    │       │   ├── templates/  
+    │       │   │   └── index.html  
+    │       ├── applications/  
+    │       │   └── myapp.desktop  
+    │       └── icons/  
+    │           └── hicolor/  
+    │               └── 48x48/  
+    │                   └── apps/  
+    │                       └── myapp-icon.png  
+
+
 
 2. Create the Control File
     In the DEBIAN/ directory, create a file named control with the following content:
