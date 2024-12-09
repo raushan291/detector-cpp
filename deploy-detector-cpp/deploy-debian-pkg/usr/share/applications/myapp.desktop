@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=MyApp
+Comment=Flask-based multi-camera inference
+Exec=start-myapp
+Icon=myapp-icon
+Terminal=true
+Type=Application
+Categories=Utility;
+
